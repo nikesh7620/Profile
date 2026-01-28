@@ -4,49 +4,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>John Doe | Profile</title>
+    <title>Nikesh Anantakavalas | Software Engineer Trainee</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <div class="profile-card">
-        <!-- Profile Image -->
-        <img src="profile.jpg" alt="John Doe" class="profile-img">
+    <!-- Dark Mode Toggle -->
+    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
 
-        <!-- Name and Title -->
-        <h1>John Doe</h1>
-        <h3>Software Engineer Trainee</h3>
+    <main class="page">
 
-        <!-- Bio -->
-        <p class="bio">
-            I am a passionate software engineer trainee focused on building efficient and user-friendly applications.
-            I enjoy learning new technologies and constantly improving my skills.
-        </p>
+        <!-- LEFT SECTION -->
+        <section class="left">
+            <img src="profile.jpg" alt="Nikesh Anantakavalas" class="profile-img">
 
-        <!-- Skills -->
-        <div class="skills">
-            <span>RPGLE</span>
-            <span>RPG</span>
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
-        </div>
+            <h1>Nikesh Anantakavalas</h1>
+            <h2>Software Engineer Trainee</h2>
 
-        <!-- Links / Buttons -->
-        <div class="links">
-            <a href="https://www.linkedin.com/in/nikesh-anantakavalas-b34626246/"
-                target="_blank">LinkedIn</a>
-            <a href="https://github.com/nikesh7620" target="_blank">GitHub</a>
-            <a href="https://yourportfolio.com" target="_blank">Portfolio</a>
-        </div>
+            <p class="bio">
+                Motivated Software Engineer Trainee with a strong foundation in web development.
+                Passionate about building clean, efficient, and user-friendly applications.
+            </p>
 
-        <!-- Contact -->
-        <div class="contact">
-            <a href="mailto:nikeshmali106@email.com">Contact Me</a>
-        </div>
-    </div>
+            <a href="mailto:zoro404@gmail.com" class="contact-btn">Contact Me</a>
+        </section>
+
+        <!-- RIGHT SECTION -->
+        <section class="right">
+
+            <!-- Skills -->
+            <div class="block">
+                <h3>Skills</h3>
+                <div class="skills">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>Git</span>
+                    <span>GitHub</span>
+                    <span>React (Basic)</span>
+                </div>
+            </div>
+
+            <!-- Projects -->
+            <div class="block">
+                <h3>Projects</h3>
+
+                <div class="project">
+                    <h4>Bank Management System</h4>
+                    <p>
+                        Web-based Bank Management System developed using JSP, Servlets,
+                        JDBC, HTML, CSS, and MySQL. Includes secure login, account management,
+                        and transaction features.
+                    </p>
+                    <a href="https://bank-management-muau.onrender.com/Login.jsp" target="_blank">
+                        Live Demo
+                    </a>
+                </div>
+
+                <div class="project">
+                    <h4>GitHub Repositories</h4>
+                    <p>
+                        Collection of personal, academic, and practice projects demonstrating
+                        problem-solving and coding skills.
+                    </p>
+                    <a href="https://github.com/nikesh7620" target="_blank">
+                        View GitHub
+                    </a>
+                </div>
+            </div>
+
+            <!-- Resume -->
+            <div class="block">
+                <h3>Resume</h3>
+                <a href="resume.pdf" class="resume-btn" download>⬇ Download Resume</a>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Dark Mode Script -->
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem(
+                "theme",
+                document.body.classList.contains("dark") ? "dark" : "light"
+            );
+        }
+
+        window.onload = () => {
+            if (localStorage.getItem("theme") === "dark") {
+                document.body.classList.add("dark");
+            }
+        };
+    </script>
 
 </body>
 
